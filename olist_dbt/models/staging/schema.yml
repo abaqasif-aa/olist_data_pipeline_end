@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: olist
+    database: olist_dw
+    schema: public
+    tables:
+      - name: silver_orders_enriched
+
+models:
+  - name: stg_orders_enriched
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      - name: order_status
+        tests:
+          - accepted_values:
+              arguments: 
+                values: ['delivered', 'shipped', 'processing', 'invoiced', 'unavailable', 'approved']
+
+  - name: int_orders_enriched
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+  - name: agg_daily_revenue
+    columns:
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null

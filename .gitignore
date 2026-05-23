@@ -1,0 +1,16 @@
+venv-linux/
+venv-airflow/
+olist-pipeline/
+raw_data/
+data_lake/
+spark-warehouse/
+spark-temp/
+olist_dbt/target/
+olist_dbt/logs/
+olist_dbt/dbt_packages/
+airflow/logs/
+airflow/airflow.db
+*.json
+drivers/
+__pycache__/
+*.pyc
