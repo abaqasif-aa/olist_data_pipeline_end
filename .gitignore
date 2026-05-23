@@ -14,3 +14,4 @@ airflow/airflow.db
 drivers/
 __pycache__/
 *.pyc
+activate_projects.ps1
