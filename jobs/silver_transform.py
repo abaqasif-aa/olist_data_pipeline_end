@@ -3,7 +3,7 @@ from pyspark.sql.functions import to_timestamp, datediff, when, col
 import sys
 
 
-def main():
+def silver_transform():
     spark = SparkSession.builder.appName("olist_silver")\
     .config("spark.driver.extraClassPath", "/mnt/d/Practise Projects/E-commerce/drivers/postgresql.jar") \
     .config("spark.executor.extraClassPath", "/mnt/d/Practise Projects/E-commerce/drivers/postgresql.jar") \
@@ -97,6 +97,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    silver_transform()
 
     
