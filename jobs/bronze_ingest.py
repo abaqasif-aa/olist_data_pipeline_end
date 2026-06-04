@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession
 # Must be set BEFORE SparkSession is created
 os.environ['HADOOP_HOME'] = 'C:/hadoop'
 
-def main():
+def bronze_transform():
     spark = SparkSession.builder \
         .appName("olist_bronze") \
         .master("local[*]") \
@@ -30,6 +30,6 @@ def main():
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    main()
+    bronze_transform()
 
     
